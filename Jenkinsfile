@@ -4,8 +4,14 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				echo 'Building..'
-			}
+				bat 'cd monappli & mvn test'
+			    }
+		    post {
+                success {
+                    junit 'monappli/monappli-service/target/surefire-reports/*.xml'
+                        }
+                 }
+               }
 		}
 		stage('Test') {
 			steps {
