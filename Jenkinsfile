@@ -11,7 +11,7 @@ pipeline {
                     junit 'monappli/monappli-service/target/surefire-reports/*.xml'
                         }
                  }
-               }
+         
 		}
 		stage('Test') {
 			steps {
